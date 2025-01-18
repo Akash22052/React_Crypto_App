@@ -6,7 +6,8 @@ import { SingleCoin } from "../Config/api";
 import CoinInfo from "../Components/CoinInfo";
 import { styled } from "@mui/material/styles";
 import { LinearProgress, Typography } from "@mui/material";
-import ReactHtmlParser from "react-html-parser";
+import parse from 'html-react-parser';
+
 import { numberWithCommas } from "../Components/Banner/Craousel";
 
 export default function CoinPage() {
@@ -97,7 +98,7 @@ export default function CoinPage() {
             textAlign: "justify",
           }}
         >
-          {ReactHtmlParser(coin?.description.en.split(". ")[0])}
+          {parse(coin?.description.en.split(". ")[0])}
         </Typography>
         <MarketData>
           <span style={{ display: "flex" }}>
